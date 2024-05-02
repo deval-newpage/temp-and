@@ -3,7 +3,7 @@
 name: CI
 
 env:
-  environment: ${{ github.ref == 'refs/heads/main' && 'dev' || 'staging' }}
+  ENVIRONMENT: ${{ github.ref == 'refs/heads/main' && 'dev' || 'staging' }}
 
 # Controls when the workflow will run
 on:
@@ -45,5 +45,6 @@ jobs:
         run: |
           echo "Bucket name variable is  : ${{ vars.BUCKET_NAME }}"
           echo "Temp  variable is  : ${{ vars.TEMP_VARIBALE }}"
-          echo "Env name  is  : ${{ needs.set_environment.outputs.my_env }}"
+          echo "Env name is ; ${{env.ENVIRONMENT}}"
+
           
