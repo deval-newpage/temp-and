@@ -2,6 +2,9 @@
 
 name: CI
 
+env:
+  ENVIRONMENT: ${{ github.ref == 'refs/heads/main' && 'dev' || 'staging' }}
+
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
@@ -9,9 +12,6 @@ on:
     branches: [ "main","staging" ]
   pull_request:
     branches: [ "main" ]
-
-env:
-  ENVIRONMENT: ${{ github.ref == 'refs/heads/main' && 'dev' || 'staging' }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
