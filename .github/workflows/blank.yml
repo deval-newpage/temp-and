@@ -36,5 +36,5 @@ jobs:
         run: |
           echo "Bucket name variable is  : ${{ vars.BUCKET_NAME }}"
           echo "Temp  variable is  : ${{ vars.TEMP_VARIBALE }}"
-          echo "Env name is ; ${{jobs.build.environment}}"
+          echo "Env name is ; ${{github.env}}"
           
